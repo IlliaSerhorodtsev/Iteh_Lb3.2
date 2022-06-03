@@ -62,7 +62,7 @@ include('connect.php');
       <select name='publisher' id='publisher'>
         <?php
         try {
-          $sql = 'SELECT DISTINCT publisher FROM iteh_lb1.literature';
+          $sql = 'SELECT DISTINCT publisher FROM iteh_lb1.literature WHERE publisher IS NOT NULL';
           foreach ($dbh->query($sql) as $row) {
             $name = $row[0];
             print "<option value = '$name'>$name</option>";
